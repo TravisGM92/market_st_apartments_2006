@@ -27,7 +27,8 @@ class Building
   end
 
   def rented_units
-    units.select{ |unit| unit}
-end
+    units.select{ |unit| not unit.renter == nil}
+
+  end
 
 end
