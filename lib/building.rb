@@ -45,6 +45,16 @@ class Building
     annual_cost
   end
 
+  def rooms_by_renter
+    rooms = {}
+    rooms_only = {}
+    bathrooms = rented_units.each{ |room| rooms_only[:bathrooms] = room.bathrooms}
+    bedrooms = rented_units.each{ |room| rooms_only[:bedrooms] = room.bedrooms}
+    rented_units.each{ |room| rooms[room.renter] = rooms_only}
+    rooms
+
+  end
+
 
 
 end

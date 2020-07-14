@@ -151,7 +151,7 @@ class BuildingTest < Minitest::Test
     building.units[1].add_renter(renter2)
 
 
-    assert_equal building.rooms_by_renter, 2
+    assert_equal building.rooms_by_renter.length, 2
   end
 
 
