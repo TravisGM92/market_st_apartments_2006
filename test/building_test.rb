@@ -110,14 +110,18 @@ class BuildingTest < Minitest::Test
   def test_it_can_display_units_by_number_of_bedrooms
     building = Building.new
     unit1 = Apartment.new({number: "A1", monthly_rent: 1200, bathrooms: 1, bedrooms: 1})
-    unit2 = Apartment.new({number: "B2", monthly_rent: 999, bathrooms: 2, bedrooms: 2})
+    unit2 = Apartment.new({number: "C2", monthly_rent: 999, bathrooms: 2, bedrooms: 2})
     unit3 = Apartment.new({number: "B2", monthly_rent: 2000, bathrooms: 2, bedrooms: 4})
+    unit4 = Apartment.new({number: "D2", monthly_rent: 2000, bathrooms: 2, bedrooms: 4})
+
     building.add_unit(unit1)
     building.add_unit(unit2)
     building.add_unit(unit3)
+    building.add_unit(unit4)
 
 
-    assert_equal building.units_by_number_of_bedrooms, {4=>"B2", 2=>"B2", 1=>"A1"}
+
+    assert_equal building.units_by_number_of_bedrooms, {4=>["D2", "B2"], 2=>["C2"], 1=>["A1"]}
   end
 
   def test_it_can_display_annual_breakdown

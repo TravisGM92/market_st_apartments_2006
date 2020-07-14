@@ -35,7 +35,7 @@ class Building
   def units_by_number_of_bedrooms
     number_bedrooms = {}
     bedrooms = units.sort_by{ |unit| unit.bedrooms}.reverse
-    bedrooms.each{ |units| number_bedrooms[units.bedrooms] = units.number}
+    bedrooms.each{ |units| number_bedrooms[units.bedrooms] = bedrooms.map{ |unit| unit.bedrooms == units.bedrooms ? unit.number : nil}.compact!}
     number_bedrooms
   end
 
