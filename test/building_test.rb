@@ -107,6 +107,19 @@ class BuildingTest < Minitest::Test
     assert_equal building.renter_with_highest_rent, unit1.renter
   end
 
+  def test_it_can_display_units_by_number_of_bedrooms
+    building = Building.new
+    unit1 = Apartment.new({number: "A1", monthly_rent: 1200, bathrooms: 1, bedrooms: 1})
+    unit2 = Apartment.new({number: "B2", monthly_rent: 999, bathrooms: 2, bedrooms: 2})
+    unit3 = Apartment.new({number: "B2", monthly_rent: 2000, bathrooms: 2, bedrooms: 4})
+    building.add_unit(unit1)
+    building.add_unit(unit2)
+    building.add_unit(unit3)
+
+
+    assert_equal building.units_by_number_of_bedrooms, 2
+  end
+
 
 
 end
