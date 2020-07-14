@@ -8,7 +8,7 @@ class Apartment
     @number = info[:number]
     @monthly_rent = info[:monthly_rent]
     @bedrooms = info[:bedrooms]
-    @bathrooms = bathrooms
+    @bathrooms = info[:bathrooms]
   end
 
 
