@@ -3,8 +3,8 @@ require './lib/renter'
 class Apartment
   attr_reader :info, :number,
               :monthly_rent,
-              :bedrooms, :bathrooms,
-              :renter
+              :bedrooms, :bathrooms
+  attr_accessor :renter
 
   def initialize(info={})
     @info = info
@@ -12,7 +12,14 @@ class Apartment
     @monthly_rent = info[:monthly_rent]
     @bedrooms = info[:bedrooms]
     @bathrooms = info[:bathrooms]
-    @renter = nil
+  end
+
+  def renter
+    info[:renter]
+  end
+
+  def add_renter(renter_name)
+    info[:renter] = renter_name
   end
 
 
