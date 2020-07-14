@@ -18,5 +18,9 @@ class Building
     units.map{ |unit| unit.renter}
   end
 
+  def average_rent
+    units.sum{ |unit| unit.monthly_rent.to_f} / units.length
+  end
+
 
 end
