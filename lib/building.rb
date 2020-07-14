@@ -22,5 +22,12 @@ class Building
     units.sum{ |unit| unit.monthly_rent.to_f} / units.length
   end
 
+  def empty_units
+    units.select{ |unit| unit.renter == nil}
+  end
+
+  def rented_units
+    units.select{ |unit| unit}
+end
 
 end
