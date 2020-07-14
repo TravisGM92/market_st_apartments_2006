@@ -117,7 +117,7 @@ class BuildingTest < Minitest::Test
     building.add_unit(unit3)
 
 
-    assert_equal building.units_by_number_of_bedrooms, 2
+    assert_equal building.units_by_number_of_bedrooms, {4=>"B2", 2=>"B2", 1=>"A1"}
   end
 
 
