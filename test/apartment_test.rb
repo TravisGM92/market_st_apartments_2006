@@ -10,10 +10,15 @@ class ApartmentTest < Minitest::Test
       assert_instance_of Apartment, apt
   end
 
-  def test_it_has_info
+  def test_it_has_number
     apt = Apartment.new({number: "A1", monthly_rent: 1200, bathrooms: 1, bedrooms: 1})
 
     assert_equal apt.number, "A1"
   end
 
+  def test_it_has_monthly_rent
+    apt = Apartment.new({number: "A1", monthly_rent: 1200, bathrooms: 1, bedrooms: 1})
+
+    assert_equal apt.monthly_rent, 1200
+  end
 end

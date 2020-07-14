@@ -6,13 +6,10 @@ class Apartment
   def initialize(info={})
     @info = info
     @number = info[:number]
-    @monthly_rent = monthly_rent
+    @monthly_rent = info[:monthly_rent]
     @bedrooms = bedrooms
     @bathrooms = bathrooms
   end
 
-  def number
-    @number
-  end
 
 end
