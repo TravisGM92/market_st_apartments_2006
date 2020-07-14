@@ -28,4 +28,8 @@ class Building
     units.select{ |unit| not unit.renter == nil}
   end
 
+  def renter_with_highest_rent
+    rented_units.max_by{ |unit| unit.monthly_rent}.renter
+  end
+
 end
