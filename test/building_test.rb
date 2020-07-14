@@ -53,6 +53,7 @@ class BuildingTest < Minitest::Test
     renter1 = Renter.new("Jessie")
     renter2 = Renter.new("Tim")
 
+    assert_equal building.average_rent, 1099.5
 
   end
 
