@@ -5,7 +5,9 @@ require './lib/renter'
 class RenterTest < Minitest::Test
 
   def test_it_exists
-      
+      renter1 = Renter.new
+
+      assert_instance_of Renter, renter1
   end
 
 end
