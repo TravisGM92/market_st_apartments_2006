@@ -6,8 +6,6 @@ class Building
 
   def initialize(units=[])
     @units = units
-
-
   end
 
   def add_unit(unit)
@@ -28,7 +26,6 @@ class Building
 
   def rented_units
     units.select{ |unit| not unit.renter == nil}
-
   end
 
 end
