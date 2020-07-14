@@ -128,9 +128,13 @@ class BuildingTest < Minitest::Test
     building.add_unit(unit1)
     building.add_unit(unit2)
     building.add_unit(unit3)
+    renter1 = Renter.new("Jessie")
+    renter2 = Renter.new("Tim")
+    building.units[0].add_renter(renter1)
+    building.units[1].add_renter(renter2)
 
 
-    assert_equal building.annual_breakdown, 2
+    assert_equal building.annual_breakdown, {"Jessie"=>14400, "Tim"=>11988}
   end
 
 

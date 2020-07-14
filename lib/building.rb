@@ -33,10 +33,18 @@ class Building
   end
 
   def units_by_number_of_bedrooms
-    new_hash = {}
+    number_bedrooms = {}
     bedrooms = units.sort_by{ |unit| unit.bedrooms}.reverse
-    bedrooms.each{ |units| new_hash[units.bedrooms] = units.number}
-    new_hash
+    bedrooms.each{ |units| number_bedrooms[units.bedrooms] = units.number}
+    number_bedrooms
   end
+
+  def annual_breakdown
+    annual_cost = {}
+    rented_units.collect{ |unit| annual_cost[unit.renter.name] = (unit.monthly_rent * 12)}
+    annual_cost
+  end
+
+
 
 end
